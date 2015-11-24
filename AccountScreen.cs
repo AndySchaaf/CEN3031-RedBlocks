@@ -17,12 +17,14 @@ namespace VideoGameRentalSystem
         private RentalManagementSystem managementSystem = new RentalManagementSystem();
         private User workingUser;
 
+        //Working user is passed to thier account screen 
         public AccountScreen(User workingUser)
         {
             InitializeComponent();
             this.workingUser = workingUser;
         }
 
+        //Called when user clicks on their "rented games" table
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = 0;
@@ -50,6 +52,7 @@ namespace VideoGameRentalSystem
 
         private void AccountScreen_Activated(object sender, EventArgs e)
         {
+            //Fills out the labels
             nameLabel.Text = workingUser.getProfile().getFirstName() + " " + workingUser.getProfile().getLastName();
             emailLabel.Text = workingUser.getProfile().getEmail();
             streetLabel.Text = workingUser.getProfile().getAddress();
@@ -57,6 +60,7 @@ namespace VideoGameRentalSystem
             stateLabel.Text = workingUser.getProfile().getState();
             zipLabel.Text = workingUser.getProfile().getZip();
 
+            //This is sort of a complex SQL query but it joins the User with their rented games
             sql = "SELECT gameTitle AS 'Game Title',gameConsole AS 'Game Console' FROM ( ";
             sql += "SELECT Users.id AS userID,Video_Games.title AS gameTitle,Video_Games.console AS gameConsole ";
             sql += "FROM Users_Games ";
@@ -68,7 +72,7 @@ namespace VideoGameRentalSystem
             dt = managementSystem.fillDataTable(sql);
             dataGridView1.DataSource = dt;
         }
-
+        //Edit profile button 
         private void button1_Click(object sender, EventArgs e)
         {
             EditProfileScreen editProfileScreen = new EditProfileScreen(workingUser);
