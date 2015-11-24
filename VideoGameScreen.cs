@@ -17,10 +17,12 @@ namespace VideoGameRentalSystem
         private string sql;
         private RentalManagementSystem managementSystem = new RentalManagementSystem();
         private bool rentable;
+        
+        
         public VideoGameScreen(VideoGame selectedGame, User workingUser, bool rentable)
         {
             InitializeComponent();
-            this.rentable = rentable;
+            this.rentable = rentable; //Rentable tracks where the user clicked, if they can return or rent it
             this.selectedGame = selectedGame;
             this.workingUser = workingUser;
             this.Text = selectedGame.getTitle();
@@ -38,7 +40,8 @@ namespace VideoGameRentalSystem
                 rentButton.Enabled = false;
             }
         }
-
+        
+        //If the user rents a game, update the database
         private void rentButton_Click(object sender, EventArgs e)
         {
             sql = "UPDATE Video_Games SET inventory = (inventory - 1) WHERE id = " 
@@ -51,6 +54,7 @@ namespace VideoGameRentalSystem
             }
             else
             {
+                //Put the game in the users rented games table
                 sql = "INSERT INTO Users_Games VALUES ("
                 + workingUser.getProfile().getUserID()
                 + "," + selectedGame.getID()
@@ -67,7 +71,8 @@ namespace VideoGameRentalSystem
                 }
             }
         }
-
+        
+        //Same logic for returning
         private void returnButton_Click(object sender, EventArgs e)
         {
             sql = "update Video_Games set inventory = (inventory + 1) where id = "
@@ -98,6 +103,7 @@ namespace VideoGameRentalSystem
             }
         }
 
+        //Dont delete -------
         private void VideoGameScreen_Load(object sender, EventArgs e)
         {
         }
