@@ -17,22 +17,28 @@ namespace VideoGameRentalSystem
         private RentalManagementSystem managementSystem = new RentalManagementSystem();
         private Dictionary<TextBox, string> boxes = new Dictionary<TextBox, string>();
         private const string EMPTY_STRING = "";
+        
         public RegisterScreen()
         {
             InitializeComponent();
-            initializeDict();
+            initializeDict(); //Sets textboxes with thier default text
         }
-
+        
+        
         private void registerButton_Click(object sender, EventArgs e)
         {
+            //Checks that textboxes are filled
             if (checkValidTextBoxes())
             {
+                //If they are, call register from management system, textbox values passed as parameters
                 if (managementSystem.register(firstNameTextBox.Text, lastNameTextBox.Text, emailTextBox.Text,
                    passwordTextBox.Text, addressTextBox.Text, cityTextBox.Text, stateComboBox.Text, zipTextBox.Text))
                 {
+                    //Create a new user and log them in 
                     User loggedInUser = managementSystem.logIn(emailTextBox.Text, passwordTextBox.Text);
                     if (loggedInUser != null)
                     {
+                        //Create new main screen and pass the new user
                         rentalScreen = new RentalMainScreen(loggedInUser);
                         rentalScreen.Show();
                         this.Hide();
@@ -43,6 +49,7 @@ namespace VideoGameRentalSystem
 
         private bool checkValidTextBoxes()
         {
+            //Checks all textboxes are filled and have valid values
             if (passwordTextBox.Text != passwordConfirmTextBox.Text)
             {
                 MessageBox.Show("Password fields did not match");
@@ -74,7 +81,8 @@ namespace VideoGameRentalSystem
             boxes.Add(cityTextBox, "City");
             boxes.Add(zipTextBox, "Zip");
         }
-
+        
+        //"Back to log in" label
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LogInScreen logInScreen = new LogInScreen();
@@ -82,6 +90,8 @@ namespace VideoGameRentalSystem
             this.Hide();
         }
 
+
+        //Visual Studio genereated -----
         private void passwordTextBox_Enter(object sender, EventArgs e)
         {
             if (passwordTextBox.Text.Equals("Password"))
