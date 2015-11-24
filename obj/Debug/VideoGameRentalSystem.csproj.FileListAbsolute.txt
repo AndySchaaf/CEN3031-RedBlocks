@@ -1,0 +1,14 @@
+c:\users\andy\documents\visual studio 2013\Projects\VideoGameRentalSystem\bin\Debug\VideoGameRentalSystem.exe.config
+c:\users\andy\documents\visual studio 2013\Projects\VideoGameRentalSystem\bin\Debug\VideoGameRentalSystem.exe
+c:\users\andy\documents\visual studio 2013\Projects\VideoGameRentalSystem\bin\Debug\VideoGameRentalSystem.pdb
+c:\users\andy\documents\visual studio 2013\Projects\VideoGameRentalSystem\obj\Debug\VideoGameRentalSystem.csprojResolveAssemblyReference.cache
+c:\users\andy\documents\visual studio 2013\Projects\VideoGameRentalSystem\obj\Debug\VideoGameRentalSystem.Properties.Resources.resources
+c:\users\andy\documents\visual studio 2013\Projects\VideoGameRentalSystem\obj\Debug\VideoGameRentalSystem.csproj.GenerateResource.Cache
+c:\users\andy\documents\visual studio 2013\Projects\VideoGameRentalSystem\obj\Debug\VideoGameRentalSystem.exe
+c:\users\andy\documents\visual studio 2013\Projects\VideoGameRentalSystem\obj\Debug\VideoGameRentalSystem.pdb
+c:\users\andy\documents\visual studio 2013\Projects\VideoGameRentalSystem\obj\Debug\VideoGameRentalSystem.LogInScreen.resources
+c:\users\andy\documents\visual studio 2013\Projects\VideoGameRentalSystem\obj\Debug\VideoGameRentalSystem.RentalMainScreen.resources
+c:\users\andy\documents\visual studio 2013\Projects\VideoGameRentalSystem\obj\Debug\VideoGameRentalSystem.RegisterScreen.resources
+C:\Users\andy\documents\visual studio 2013\Projects\VideoGameRentalSystem\obj\Debug\VideoGameRentalSystem.VideoGameScreen.resources
+C:\Users\andy\documents\visual studio 2013\Projects\VideoGameRentalSystem\obj\Debug\VideoGameRentalSystem.AccountScreen.resources
+C:\Users\andy\documents\visual studio 2013\Projects\VideoGameRentalSystem\obj\Debug\VideoGameRentalSystem.EditProfileScreen.resources

@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADA93D15-10D8-4323-9B38-402685C8FD4F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VideoGameRentalSystem</RootNamespace>
+    <AssemblyName>VideoGameRentalSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountScreen.Designer.cs">
+      <DependentUpon>AccountScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditProfileScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProfileScreen.Designer.cs">
+      <DependentUpon>EditProfileScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogInScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogInScreen.Designer.cs">
+      <DependentUpon>LogInScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedBlocksDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RedBlocksDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterScreen.Designer.cs">
+      <DependentUpon>RegisterScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RentalMainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RentalMainScreen.Designer.cs">
+      <DependentUpon>RentalMainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RentalManagementSystem.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserProfile.cs" />
+    <Compile Include="VideoGame.cs" />
+    <Compile Include="VideoGameScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VideoGameScreen.Designer.cs">
+      <DependentUpon>VideoGameScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AccountScreen.resx">
+      <DependentUpon>AccountScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProfileScreen.resx">
+      <DependentUpon>EditProfileScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogInScreen.resx">
+      <DependentUpon>LogInScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RegisterScreen.resx">
+      <DependentUpon>RegisterScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RentalMainScreen.resx">
+      <DependentUpon>RentalMainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoGameScreen.resx">
+      <DependentUpon>VideoGameScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="RedBlocksDataSet.xsc">
+      <DependentUpon>RedBlocksDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RedBlocksDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RedBlocksDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RedBlocksDataSet.xss">
+      <DependentUpon>RedBlocksDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
