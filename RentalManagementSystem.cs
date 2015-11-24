@@ -19,11 +19,13 @@ namespace VideoGameRentalSystem
 
         public RentalManagementSystem()
         {
+            //Initialize SQL connection
             con = new SqlConnection();
             con.ConnectionString = "Server=ANDYS-COMPUTER;Database=RedBlocks;Trusted_Connection=true";
             con.Open();
         }
 
+        //Generates 4 charactor user ID 
         private int generateUserID()
         {
             rand = new Random(DateTime.Now.Second);
@@ -32,6 +34,7 @@ namespace VideoGameRentalSystem
 
         public DataTable fillDataTable(string sql)
         {
+            //Excecutes SQL query and returns the datatable 
             using (SqlCommand cmd = new SqlCommand(sql, con))
             {
                 DataTable dt = new DataTable();
@@ -40,8 +43,10 @@ namespace VideoGameRentalSystem
             }
         }
 
+        
         public bool register(string firstName, string lastName, string email, string password, string address, string city, string state, string zip)
         {
+            // Creates new user
             sql = "INSERT INTO Users VALUES (" +
                 generateUserID() + "," +
                 "'" + firstName + "'" + "," +
@@ -58,6 +63,7 @@ namespace VideoGameRentalSystem
 
         public bool excecuteData(string sql)
         {
+            //Excecutes SQL Query, returns false if failed
             using (SqlCommand cmd = new SqlCommand(sql, con))
             {
                 try
@@ -82,6 +88,7 @@ namespace VideoGameRentalSystem
 
         public User logIn(string enteredEmail, string enteredPassword)
         {
+            //Attempts to find user 
             sql = "SELECT * FROM Users WHERE email = '" + enteredEmail + "'";
             using (SqlCommand cmd = new SqlCommand(sql, con))
             {
@@ -95,6 +102,7 @@ namespace VideoGameRentalSystem
                         {
                             if (reader[4].ToString().Equals(enteredPassword))
                             {
+                                //If password matches email, create new user and fill out thier user profile
                                 User newWorkingUser = new User();
                                 newWorkingUser.setProfile(
                                     reader[0].ToString(),
